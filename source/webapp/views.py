@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from webapp.models import *
+from django.http import HttpResponseNotAllowed
 
-# Create your views here.
+
+def index_view(request):
+    data = Task.objects.all()
+    return render(request, 'index.html', context={'articles': data})
+
+
+
