@@ -5,7 +5,7 @@ from django.http import HttpResponseNotAllowed
 
 def index_view(request):
     data = Task.objects.all()
-    return render(request, 'index.html', context={'articles': data})
+    return render(request, 'index.html', context={'tasks': data})
 
 
 
