@@ -1,0 +1,83 @@
+[
+{
+  "model": "webapp.task",
+  "pk": 2,
+  "fields": {
+    "description": "Task 1",
+    "status": "new",
+    "date": "2020-07-23"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 3,
+  "fields": {
+    "description": "Task 2",
+    "status": "new",
+    "date": "2020-07-23"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 4,
+  "fields": {
+    "description": "Task 3",
+    "status": "new",
+    "date": "2020-07-23"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 5,
+  "fields": {
+    "description": "Task 4",
+    "status": "new",
+    "date": "2020-07-23"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 7,
+  "fields": {
+    "description": "My Task",
+    "status": "done",
+    "date": "2020-07-23"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 9,
+  "fields": {
+    "description": "New Task",
+    "status": "new",
+    "date": "2020-07-24"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 14,
+  "fields": {
+    "description": "Test",
+    "status": "done",
+    "date": null
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$Wh02YWacmHy8$KJ6Yr+BvDH62jTb2Zs515z8HR3adyev/EofdXhKenFs=",
+    "last_login": "2020-07-23T11:22:28Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "ADMIN",
+    "last_name": "ADMIN",
+    "email": "test@gmail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-23T11:15:22Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
