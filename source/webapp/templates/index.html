@@ -16,7 +16,9 @@
     {% for task in tasks %}
         <h3>{{ task.pk }}. {{ task.description }}</h3>
         <p>Статус: ({{ task.status }} | {{ task.get_status_display }})</p>
-        <p>{{ task.date }}</p>
+        {% if task.date == None %}
+        <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
+        {% endif %}
     {% endfor %}
     <p><a href="/tasks/add/">Добавить задачу</a></p>
 </div>

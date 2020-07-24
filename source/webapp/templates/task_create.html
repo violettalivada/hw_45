@@ -1,30 +1,33 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<a href="/">На главную</a>
-<h1>Create Task</h1>
+<div class="container">
+    <a href="/">На главную</a>
+    <h1>Create Task</h1>
 
-<form action="/tasks/add/" method="post">
-    {% csrf_token %}
+    <form action="/tasks/add/" method="post">
+        {% csrf_token %}
 
-    <label>Description:</label><br/>
-    <textarea name="description"></textarea><br/>
+        <label>Description:</label><br/>
+        <textarea name="description"></textarea><br/>
 
-    <label for="id-status">Status:</label><br/>
-    <select name="status" id="id-status">
-        {% for value, label in status_choices %}
-            <option value="{{ value }}">{{ label }}</option>
-        {% endfor %}
-    </select><br/>
-
-    <br/>
-    <input type="submit" value="Send"/>
-</form>
-
+        <label for="id-status">Status:</label><br/>
+        <select name="status" id="id-status">
+            {% for value, label in status_choices %}
+                <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br/>
+        <label>Finish date:</label><br/>
+        <input type="date"  name="date">
+        <br/>
+        <input type="submit" value="Send"/>
+    </form>
+</div>
 </body>
 </html>
