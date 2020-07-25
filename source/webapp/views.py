@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from webapp.models import *
 from django.http import HttpResponseNotAllowed
 
@@ -29,8 +29,7 @@ def task_create_view(request):
         task = Task.objects.create(title=title, description=description,
                                    status=status, date=date)
 
-        context = {'task': task}
-        return render(request, 'task_view.html', context)
+        return redirect('task_view', pk=task.pk)
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 

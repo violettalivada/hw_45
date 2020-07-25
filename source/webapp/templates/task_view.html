@@ -8,13 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <p><a href="/">На главную</a></p>
+        <p><a href="{% url 'index' %}">На главную</a></p>
         <h1>{{ task.title }}</h1>
         <p>{{ task.description }}</p>
         {% if task.date == None %}
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
         {% endif %}
-        <p><a href="/">На главную</a></p>
+        <p><a href="{% url 'index' %}">На главную</a></p>
     </div>
 </body>
 </html>

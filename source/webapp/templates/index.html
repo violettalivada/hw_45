@@ -12,15 +12,15 @@
 <body>
 <div class="container">
     <h1>Задачи:</h1>
-    <p><a href="/tasks/add/">Добавить задачу</a></p>
+    <p><a href="{% url 'task_create' %}">Добавить задачу</a></p>
     {% for task in tasks %}
-        <a href="/task/{{ task.pk }}/">{{ task.pk }}. {{ task.title }}</a>
+        <a href="{% url 'task_view' task.pk %}">{{ task.pk }}. {{ task.title }}</a>
         <p>Статус: ({{ task.status }} | {{ task.get_status_display }})</p>
         {% if task.date == None %}
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
         {% endif %}
     {% endfor %}
-    <p><a href="/tasks/add/">Добавить задачу</a></p>
+    <p><a href="{% url 'task_create' %}">Добавить задачу</a></p>
 </div>
 </body>
 </html>
