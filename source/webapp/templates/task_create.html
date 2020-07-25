@@ -13,7 +13,8 @@
 
     <form action="/tasks/add/" method="post">
         {% csrf_token %}
-
+        <label>Title: </label><br/>
+        <input type="text" name="title"><br/>
         <label>Description:</label><br/>
         <textarea name="description"></textarea><br/>
 

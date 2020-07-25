@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <p><a href="/">На главную</a></p>
-        <h1>{{ task.description }}</h1>
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.description }}</p>
         {% if task.date == None %}
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
         {% endif %}
