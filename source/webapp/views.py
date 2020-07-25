@@ -1,12 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from webapp.models import *
 from django.http import HttpResponseNotAllowed
-
 
 
 def index_view(request):
     data = Task.objects.all()
     return render(request, 'index.html', context={'tasks': data})
+
+
+def task_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    context = {'task': task}
+    return render(request, 'task_view.html', context)
 
 
 def task_create_view(request):
@@ -23,9 +28,11 @@ def task_create_view(request):
             date = None
         task = Task.objects.create(title=title, description=description,
                                    status=status, date=date)
+
         context = {'task': task}
         return render(request, 'task_view.html', context)
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+
 
 
