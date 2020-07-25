@@ -12,5 +12,4 @@
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
         {% endif %}
     {% endfor %}
-    <p><a href="{% url 'task_create' %}">Добавить задачу</a></p>
 {% endblock %}

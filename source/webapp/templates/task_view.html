@@ -3,11 +3,9 @@
 {% block title %}View{% endblock %}
 
 {% block content %}
-        <p><a href="{% url 'index' %}">На главную</a></p>
-        <h1>{{ task.title }}</h1>
-        <p>{{ task.description }}</p>
-        {% if task.date == None %}
-        <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
-        {% endif %}
-        <p><a href="{% url 'index' %}">На главную</a></p>
+    <h1> {{ task.title }}</h1>
+    <pre><p>{{ task.description }}</p></pre>
+    {% if task.date == None %}
+    <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
+    {% endif %}
 {% endblock %}

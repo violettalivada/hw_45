@@ -11,10 +11,11 @@
     max-width: 900px;
     text-align: center;
 }
-a {
-	text-decoration: none;
-    margin: 50px;
+
+h1 {
+    padding-top: 10px;
 }
+
 
 input, select, textarea {
     width: 40%;
