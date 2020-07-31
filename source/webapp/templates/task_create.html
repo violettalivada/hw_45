@@ -6,7 +6,6 @@
     <a href="{% url 'index' %}">На главную</a>
     <h1>Create Task</h1>
     <form action="{% url 'task_create' %}" method="post">
-        {% include 'partial/task_form.html' %}
-        <input type="submit" value="Send"/>
+        {% include 'partial/task_form.html' with button_text='Create' %}
     </form>
 {% endblock %}
