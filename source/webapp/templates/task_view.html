@@ -4,6 +4,7 @@
 
 {% block menu %}
     <li><a href="{% url 'task_update' task.pk %}">Edit</a></li>
+    <li><a href="{% url 'task_delete' task.pk %}">Delete</a></li>
 {% endblock %}
 
 {% block content %}

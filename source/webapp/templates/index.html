@@ -12,6 +12,7 @@
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
         <p><a href="{% url 'task_view' task.pk %}">More...</a></p>
         <p><a href="{% url 'task_update' task.pk %}">Edit</a></p>
+        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>
         {% endif %}
     {% endfor %}
 {% endblock %}
