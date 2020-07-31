@@ -10,6 +10,8 @@
         <p>Статус: ({{ task.status }} | {{ task.get_status_display }})</p>
         {% if task.date == None %}
         <p>Дата не определена</p> {% else %} <p>Дата выполнения: {{ task.date }}</p>
+        <p><a href="{% url 'task_view' task.pk %}">More...</a></p>
+        <p><a href="{% url 'task_update' task.pk %}">Edit</a></p>
         {% endif %}
     {% endfor %}
 {% endblock %}
