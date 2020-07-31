@@ -37,13 +37,27 @@ def task_create_view(request):
 def task_update_view(request, pk):
     task = get_object_or_404(Task, pk=pk)
     if request.method == 'GET':
-        return render(request, 'update.html', context={'task': task})
+        form = TaskForm(initial={
+            'title': task.title,
+            'description': task.description,
+            'status': task.status,
+            'date': task.date
+        })
+        return render(request, 'update.html', context={'task': task, 'form': form})
 
     elif request.method == 'POST':
-        task.title = request.POST.get('title')
-        task.description = request.POST.get('description')
-        task.save()
-        return redirect('task_view', pk=task.pk)
+        form = TaskForm(data=request.POST)
+        if form.is_valid():
+            task.title = form.cleaned_data['title'],
+            task.description = form.cleaned_data['description'],
+            task.status = form.cleaned_data['status'],
+            task.date = form.cleaned_data['date']
+            task.save()
+            return redirect('task_view', pk=task.pk)
+        else:
+            return render(request, 'update.html', context={'task': task, 'form': form})
+    else:
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 
 
 def task_delete_view(request, pk):
@@ -53,5 +67,7 @@ def task_delete_view(request, pk):
     elif request.method == 'POST':
         task.delete()
         return redirect('index')
+    else:
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 
 
