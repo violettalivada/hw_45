@@ -3,9 +3,9 @@
   "model": "webapp.task",
   "pk": 2,
   "fields": {
-    "title": "Task",
-    "description": "Task 1",
-    "status": "new",
+    "title": "\u0444\u044b\u043f\u0444\u043f",
+    "description": "\u0444\u044b\u043f\u043e\u0442 \u0444\u0434\u044b \u043c\u043c\u0444\u044b\u043c\u0444\r\n\u044b\u043c\u0444\u043f",
+    "status": "done",
     "date": "2020-07-23"
   }
 },
@@ -131,16 +131,6 @@
 },
 {
   "model": "webapp.task",
-  "pk": 21,
-  "fields": {
-    "title": "dng",
-    "description": "",
-    "status": "new",
-    "date": null
-  }
-},
-{
-  "model": "webapp.task",
   "pk": 22,
   "fields": {
     "title": "agag",
@@ -171,30 +161,10 @@
 },
 {
   "model": "webapp.task",
-  "pk": 25,
-  "fields": {
-    "title": "\u0444\u0430\u0446",
-    "description": "\u0444\u044b\u0430\u0443\u0430\r\n\u0444\u0430\u0443\u0430\u0434\u0439\u044c\u0430\u0436\u0434\u0439\u0446\u0430\u0434\r\n\u0446\u0430\u0439\u0446\u0430\u0434\u0439\u0446\u0445\u0430\u0434\u0446\u0439\u0445\u0443\u0430\u0434 \u0431  \u0437\u043b\u0437\u0445\u0443\u043c\u0445\u0437\u0434\u0443\u0446\u043c",
-    "status": "new",
-    "date": "2020-08-09"
-  }
-},
-{
-  "model": "webapp.task",
   "pk": 26,
   "fields": {
-    "title": "agag",
-    "description": "wfff\r\nefewfef weffe             ewfwe",
-    "status": "new",
-    "date": null
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 27,
-  "fields": {
-    "title": "agag",
-    "description": "sfwfew evewv      \r\nwefewveqsn cvkev      jnfklew",
+    "title": "asfsfgesg",
+    "description": null,
     "status": "new",
     "date": null
   }
