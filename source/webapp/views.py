@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from webapp.models import *
 from django.http import HttpResponseNotAllowed
+from .forms import TaskForm, BROWSER_DATETIME_FORMAT
 
 
 def index_view(request):
@@ -16,20 +17,19 @@ def task_view(request, pk):
 
 def task_create_view(request):
     if request.method == "GET":
-        return render(request, 'task_create.html', context={
-            'status_choices': STATUS_CHOICES
-        })
+        form = TaskForm()
+        return render(request, 'task_create.html', context={'form': form})
     elif request.method == 'POST':
-        title = request.POST.get('title')
-        description = request.POST.get('description')
-        status = request.POST.get('status')
-        date = request.POST.get('date')
-        if date == '':
-            date = None
-        task = Task.objects.create(title=title, description=description,
-                                   status=status, date=date)
-
-        return redirect('task_view', pk=task.pk)
+        form = TaskForm(data=request.POST)
+        if form.is_valid():
+            task = Task.objects.create(
+                title=form.cleaned_data['title'],
+                description=form.cleaned_data['description'],
+                status=form.cleaned_data['status'],
+                date=form.cleaned_data['date'])
+            return redirect('task_view', pk=task.pk)
+        else:
+            return render(request, 'task_create.html', context={'form': form})
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 
