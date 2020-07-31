@@ -43,14 +43,13 @@ def task_update_view(request, pk):
             'status': task.status,
             'date': task.date
         })
-        return render(request, 'update.html', context={'task': task, 'form': form})
-
+        return render(request, 'update.html', context={'form': form, 'task': task})
     elif request.method == 'POST':
         form = TaskForm(data=request.POST)
         if form.is_valid():
-            task.title = form.cleaned_data['title'],
-            task.description = form.cleaned_data['description'],
-            task.status = form.cleaned_data['status'],
+            task.title = form.cleaned_data['title']
+            task.description = form.cleaned_data['description']
+            task.status = form.cleaned_data['status']
             task.date = form.cleaned_data['date']
             task.save()
             return redirect('task_view', pk=task.pk)
