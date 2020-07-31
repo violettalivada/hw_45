@@ -4,8 +4,7 @@
 
 {% block content %}
     <h1>Задачи:</h1>
-    <p><a href="{% url 'task_create' %}">Добавить задачу</a></p>
-    {% for task in tasks %}
+      {% for task in tasks %}
         <a href="{% url 'task_view' task.pk %}">{{ task.pk }}. {{ task.title }}</a>
         <p>Статус: ({{ task.status }} | {{ task.get_status_display }})</p>
         {% if task.date == None %}
