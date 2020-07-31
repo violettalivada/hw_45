@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from webapp.models import *
 from django.http import HttpResponseNotAllowed
-from .forms import TaskForm, BROWSER_DATETIME_FORMAT
+from .forms import TaskForm
 
 
 def index_view(request):
